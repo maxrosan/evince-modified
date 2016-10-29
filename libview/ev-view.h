@@ -139,6 +139,12 @@ void           ev_view_set_caret_cursor_position    (EvView  *view,
 void
 ev_view_find_dict (EvView *ev_view);
 
+void
+ev_view_find_google (EvView *ev_view);
+
+void
+ev_view_find_scholar (EvView *ev_view);
+
 G_END_DECLS
 
 #endif /* __EV_VIEW_H__ */

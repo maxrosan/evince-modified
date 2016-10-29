@@ -305,11 +305,20 @@
 
     <section>
       <item>
-        <attribute name="label" translatable="yes">Find in dictionary</attribute>
+        <attribute name="label" translatable="yes">Search for it in dictionary</attribute>
         <attribute name="action">win.find-dictionary</attribute>
       </item>
-    </section>
 
+      <item>
+        <attribute name="label" translatable="yes">Search for it on Google</attribute>
+        <attribute name="action">win.find-google</attribute>
+      </item>
+
+      <item>
+        <attribute name="label" translatable="yes">Search for it on Scholar</attribute>
+        <attribute name="action">win.find-scholar</attribute>
+      </item>
+    </section>
 
   </menu>
 

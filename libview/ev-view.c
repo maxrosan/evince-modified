@@ -9321,27 +9321,65 @@ ev_view_copy (EvView *ev_view)
 	g_free (text);
 }
 
-void
-ev_view_find_dict (EvView *ev_view)
-{
-	char *text, *url, *format, *p;
+inline static void toLowercase(char *text) {
 
-	if (!EV_IS_SELECTION (ev_view->document))
+	char *p;
+
+	if (text == NULL) {
 		return;
+	}
 
-	format = "vivaldi \"http://dictionary.cambridge.org/dictionary/english/%s\" &";
+	for (p = text; *p; ++p) *p = tolower(*p);
+}
+
+inline static void _ev_view_open_browser (EvView *ev_view, char *format) {
+
+	char *text, *url;
 
 	text = get_selected_text (ev_view);
 
-	for (p = text; *p; ++p) *p = tolower(*p);
+	toLowercase(text);
 
-	url = (char*) malloc(strlen(format) + strlen(text) + 1);
+	url = (char*) g_malloc(strlen(format) + strlen(text) + 1);
 
 	sprintf(url, format, text);
 
 	system(url);
 
 	g_free (text);
+	g_free (url);
+
+}
+
+void
+ev_view_find_google (EvView *ev_view)
+{
+
+	if (!EV_IS_SELECTION (ev_view->document))
+		return;
+
+	_ev_view_open_browser(ev_view, "vivaldi \"https://www.google.com.br/search?q=%s\" &");
+
+}
+
+void
+ev_view_find_dict (EvView *ev_view)
+{
+
+	if (!EV_IS_SELECTION (ev_view->document))
+		return;
+
+	_ev_view_open_browser(ev_view, "vivaldi \"http://dictionary.cambridge.org/dictionary/english/%s\" &");
+}
+
+void
+ev_view_find_scholar (EvView *ev_view)
+{
+
+	if (!EV_IS_SELECTION (ev_view->document))
+		return;
+
+	_ev_view_open_browser(ev_view, "vivaldi \"https://scholar.google.com.br/scholar?q=%s\" &");
 }
 
 static void
