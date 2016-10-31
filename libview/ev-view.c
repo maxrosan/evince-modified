@@ -9373,6 +9373,16 @@ ev_view_find_dict (EvView *ev_view)
 }
 
 void
+ev_view_find_dict_oxford (EvView *ev_view)
+{
+
+	if (!EV_IS_SELECTION (ev_view->document))
+		return;
+
+	_ev_view_open_browser(ev_view, "vivaldi \"https://en.oxforddictionaries.com/search?filter=dictionary&query=%s\" &");
+}
+
+void
 ev_view_find_scholar (EvView *ev_view)
 {
 

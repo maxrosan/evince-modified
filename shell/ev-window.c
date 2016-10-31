@@ -320,6 +320,10 @@ static void     ev_window_popup_cmd_find_dict           (GSimpleAction    *actio
 							 GVariant         *parameter,
 							 gpointer          user_data);
 
+static void     ev_window_popup_cmd_find_dict_oxford    (GSimpleAction    *action,
+							 GVariant         *parameter,
+							 gpointer          user_data);
+
 static void     ev_window_popup_cmd_find_google           (GSimpleAction    *action,
 							 GVariant         *parameter,
 							 gpointer          user_data);
@@ -5686,6 +5690,7 @@ static const GActionEntry actions[] = {
 	{ "find-dictionary", ev_window_popup_cmd_find_dict },
 	{ "find-google", ev_window_popup_cmd_find_google },
 	{ "find-scholar", ev_window_popup_cmd_find_scholar },
+	{ "find-dictionary-oxford", ev_window_popup_cmd_find_dict_oxford },
 
 };
 
@@ -6047,6 +6052,17 @@ ev_window_popup_cmd_find_dict (GSimpleAction *action,
 
 	ev_view_find_dict(EV_VIEW (window->priv->view));
 }
+
+static void
+ev_window_popup_cmd_find_dict_oxford (GSimpleAction *action,
+			       GVariant      *parameter,
+			       gpointer       user_data)
+{
+	EvWindow *window = user_data;
+
+	ev_view_find_dict_oxford(EV_VIEW (window->priv->view));
+}
+
 
 static void
 ev_window_popup_cmd_find_google (GSimpleAction *action,

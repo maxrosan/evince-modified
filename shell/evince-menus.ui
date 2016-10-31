@@ -305,8 +305,13 @@
 
     <section>
       <item>
-        <attribute name="label" translatable="yes">Search for it in dictionary</attribute>
+        <attribute name="label" translatable="yes">Search for it in the Cambridge's dictionary</attribute>
         <attribute name="action">win.find-dictionary</attribute>
+      </item>
+
+      <item>
+        <attribute name="label" translatable="yes">Search for it in the Oxford's dictionary</attribute>
+        <attribute name="action">win.find-dictionary-oxford</attribute>
       </item>
 
       <item>

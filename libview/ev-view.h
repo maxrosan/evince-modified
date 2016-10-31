@@ -140,6 +140,9 @@ void
 ev_view_find_dict (EvView *ev_view);
 
 void
+ev_view_find_dict_oxford (EvView *ev_view);
+
+void
 ev_view_find_google (EvView *ev_view);
 
 void
