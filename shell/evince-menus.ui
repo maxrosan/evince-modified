@@ -304,6 +304,12 @@
     </section>
 
     <section>
+
+      <item>
+        <attribute name="label" translatable="yes">Search for it in the LEO's dictionary</attribute>
+        <attribute name="action">win.find-dictionary-leo</attribute>
+      </item>
+
       <item>
         <attribute name="label" translatable="yes">Search for it in the Cambridge's dictionary</attribute>
         <attribute name="action">win.find-dictionary</attribute>

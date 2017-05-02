@@ -9358,7 +9358,7 @@ ev_view_find_google (EvView *ev_view)
 	if (!EV_IS_SELECTION (ev_view->document))
 		return;
 
-	_ev_view_open_browser(ev_view, "vivaldi \"https://www.google.com.br/search?q=%s\" &");
+	_ev_view_open_browser(ev_view, BROWSER_DEFAULT " \"https://www.google.com.br/search?q=%s\" &");
 
 }
 
@@ -9369,7 +9369,7 @@ ev_view_find_dict (EvView *ev_view)
 	if (!EV_IS_SELECTION (ev_view->document))
 		return;
 
-	_ev_view_open_browser(ev_view, "vivaldi \"http://dictionary.cambridge.org/dictionary/english/%s\" &");
+	_ev_view_open_browser(ev_view, BROWSER_DEFAULT " \"http://dictionary.cambridge.org/dictionary/english/%s\" &");
 }
 
 void
@@ -9379,7 +9379,17 @@ ev_view_find_dict_oxford (EvView *ev_view)
 	if (!EV_IS_SELECTION (ev_view->document))
 		return;
 
-	_ev_view_open_browser(ev_view, "vivaldi \"https://en.oxforddictionaries.com/search?filter=dictionary&query=%s\" &");
+	_ev_view_open_browser(ev_view, BROWSER_DEFAULT " \"https://en.oxforddictionaries.com/search?filter=dictionary&query=%s\" &");
+}
+
+void
+ev_view_find_dict_leo (EvView *ev_view)
+{
+
+	if (!EV_IS_SELECTION (ev_view->document))
+		return;
+
+	_ev_view_open_browser(ev_view, BROWSER_DEFAULT " \"http://dict.leo.org/german-english/%s\" &");
 }
 
 void
@@ -9389,7 +9399,7 @@ ev_view_find_scholar (EvView *ev_view)
 	if (!EV_IS_SELECTION (ev_view->document))
 		return;
 
-	_ev_view_open_browser(ev_view, "vivaldi \"https://scholar.google.com.br/scholar?q=%s\" &");
+	_ev_view_open_browser(ev_view, BROWSER_DEFAULT " \"https://scholar.google.com.br/scholar?q=%s\" &");
 }
 
 static void

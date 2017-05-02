@@ -136,6 +136,11 @@ void           ev_view_set_caret_cursor_position    (EvView  *view,
                                                      guint    page,
                                                      guint    offset);
 
+#define BROWSER_DEFAULT "firefox"
+
+void
+ev_view_find_dict_leo (EvView *ev_view);
+
 void
 ev_view_find_dict (EvView *ev_view);
 
